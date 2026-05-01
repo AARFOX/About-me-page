@@ -1,0 +1,262 @@
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ===== Calculator Container ===== */
+.calculator {
+    background: #1a1a2e;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    max-width: 350px;
+    width: 100%;
+}
+
+.calculator h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #888;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+/* ===== Display ===== */
+.display {
+    background: #16213e;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.previous-operand {
+    color: #888;
+    font-size: 1rem;
+    min-height: 20px;
+    word-wrap: break-word;
+}
+
+.current-operand {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 18px;
+    aspect-ratio: 1;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Button Types */
+.btn-number {
+    background: #16213e;
+    color: #fff;
+}
+
+.btn-number:hover {
+    background: #1f3460;
+}
+
+.btn-operator {
+    background: #e94560;
+    color: #fff;
+}
+
+.btn-operator:hover {
+    background: #ff6b6b;
+}
+
+.btn-clear {
+    background: #ff9f43;
+    color: #fff;
+}
+
+.btn-clear:hover {
+    background: #ffc048;
+}
+
+.btn-delete {
+    background: #ee5a5a;
+    color: #fff;
+}
+
+.btn-delete:hover {
+    background: #ff7676;
+}
+
+.btn-equals {
+    background: #4ecca3;
+    color: #fff;
+}
+
+.btn-equals:hover {
+    background: #5fffb1;
+}
+
+.btn-zero {
+    grid-column: span 2;
+    aspect-ratio: auto;
+}
+
+/* ===== Error Message ===== */
+.error-message {
+    background: #ff4757;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* ===== History Section ===== */
+.history-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.history-section h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.history {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.history-item {
+    background: #16213e;
+    color: #aaa;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.btn-clear-history {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: #888;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.btn-clear-history:hover {
+    background: #444;
+    color: #fff;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+footer strong {
+    color: #fff;
+}
+
+/* ===== Scrollbar ===== */
+.history::-webkit-scrollbar {
+    width: 5px;
+}
+
+.history::-webkit-scrollbar-track {
+    background: #16213e;
+    border-radius: 5px;
+}
+
+.history::-webkit-scrollbar-thumb {
+    background: #4ecca3;
+    border-radius: 5px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 400px) {
+    .calculator {
+        padding: 15px;
+    }
+    
+    .btn {
+        padding: 14px;
+        font-size: 1.1rem;
+    }
+    
+    .current-operand {
+        font-size: 2rem;
+    }
+}
