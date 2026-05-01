@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ahmed | Full-Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- =============================================
+         Navigation - Session 09: DOM & Events
+         ============================================= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Mohamed.dev</a>
+            
+            <!-- Burger Menu Button -->
+            <button class="burger-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#goals" class="nav-link">Goals</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- =============================================
+         Hero Section - Session 06: Date & Time Greeting
+         ============================================= -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="greeting-icon" id="greeting-icon">☀️</div>
+            <p class="greeting" id="greeting">Loading...</p>
+            <div class="day-info">
+                <span class="day-name" id="day-name">Loading...</span>
+                <span class="date-full" id="date-full">Loading...</span>
+            </div>
+            <h1 class="hero-name">Mohamed Ahmed</h1>
+            <p class="hero-title">Full-Stack Web Developer</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         About Section - Session 05: Variables & Data Types
+         ============================================= -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="avatar" id="avatar">M</div>
+                    <div class="about-info">
+                        <h3 id="full-name">Loading...</h3>
+                        <p class="job-title" id="job-title">Loading...</p>
+                        <p class="location" id="location">Loading...</p>
+                    </div>
+                </div>
+                <div class="about-details">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Age</span>
+                            <span class="info-value" id="age">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Experience</span>
+                            <span class="info-value" id="experience">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span class="info-value" id="email">-</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Status</span>
+                            <span class="info-value status-available" id="status">-</span>
+                        </div>
+                    </div>
+                    <p class="about-text" id="about-text">
+                        I'm a passionate Full-Stack Developer specializing in building modern web applications. 
+                        I love turning ideas into real, working products with clean, maintainable code.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         Skills Section - Session 08: Arrays & Objects
+         ============================================= -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container" id="skills-container">
+                <!-- Skills will be rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         Projects Section - Session 08: Array Methods
+         ============================================= -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         Goals Section - Session 03: Portfolio Plan
+         ============================================= -->
+    <section id="goals" class="goals">
+        <div class="container">
+            <h2 class="section-title">My Goals</h2>
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">🎯</div>
+                    <h3>Short-term (1-2 months)</h3>
+                    <ul class="goal-list">
+                        <li><span class="check">✅</span> Complete all course sessions</li>
+                        <li><span class="check">✅</span> Build portfolio projects</li>
+                        <li><span class="pending">⏳</span> Create Upwork/Mostaql profiles</li>
+                        <li><span class="pending">⏳</span> Get first freelance client</li>
+                    </ul>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">🚀</div>
+                    <h3>Mid-term (3-6 months)</h3>
+                    <ul class="goal-list">
+                        <li><span class="pending">⏳</span> Complete 5+ freelance projects</li>
+                        <li><span class="pending">⏳</span> Learn React or Vue.js</li>
+                        <li><span class="pending">⏳</span> Build professional network</li>
+                        <li><span class="pending">⏳</span> Earn 5-star reviews</li>
+                    </ul>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">🏆</div>
+                    <h3>Long-term (6-12 months)</h3>
+                    <ul class="goal-list">
+                        <li><span class="pending">⏳</span> Become Top Rated freelancer</li>
+                        <li><span class="pending">⏳</span> Expand to full-stack</li>
+                        <li><span class="pending">⏳</span> Build recurring clients</li>
+                        <li><span class="pending">⏳</span> Financial independence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         Contact Section - Session 09: Forms & Events
+         ============================================= -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                    <div class="contact-links">
+                        <a href="#" class="contact-link">
+                            <span class="contact-icon">📧</span>
+                            <span id="contact-email">mohamed@example.com</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <span class="contact-icon">💼</span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <span class="contact-icon">🐙</span>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <span class="contact-icon">💻</span>
+                            <span>Upwork</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email-input" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project inquiry">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         Footer
+         ============================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">Mohamed.dev</span>
+                    <p>Building the web, one line at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Mohamed Ahmed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calculator Modal - Session 02 -->
+    <div class="modal" id="calculator-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Quick Calculator</h3>
+            <div class="calculator">
+                <input type="text" class="calc-display" id="calc-display" readonly>
+                <div class="calc-buttons">
+                    <button class="calc-btn" data-value="C">C</button>
+                    <button class="calc-btn" data-value="←">←</button>
+                    <button class="calc-btn" data-value="%">%</button>
+                    <button class="calc-btn operator" data-value="/">÷</button>
+                    <button class="calc-btn" data-value="7">7</button>
+                    <button class="calc-btn" data-value="8">8</button>
+                    <button class="calc-btn" data-value="9">9</button>
+                    <button class="calc-btn operator" data-value="*">×</button>
+                    <button class="calc-btn" data-value="4">4</button>
+                    <button class="calc-btn" data-value="5">5</button>
+                    <button class="calc-btn" data-value="6">6</button>
+                    <button class="calc-btn operator" data-value="-">−</button>
+                    <button class="calc-btn" data-value="1">1</button>
+                    <button class="calc-btn" data-value="2">2</button>
+                    <button class="calc-btn" data-value="3">3</button>
+                    <button class="calc-btn operator" data-value="+">+</button>
+                    <button class="calc-btn zero" data-value="0">0</button>
+                    <button class="calc-btn" data-value=".">.</button>
+                    <button class="calc-btn equals" data-value="=">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Calculator Button -->
+    <button class="calc-fab" id="calc-fab" title="Open Calculator">
+        🧮
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
