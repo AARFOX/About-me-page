@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio with Time Greeting - Session 06</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .greeting {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .time {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        
+        .title {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .skill {
+            background: #f0f0ff;
+            color: #667eea;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .day-info {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .day-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        .date-full {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #d4edda;
+            color: #155724;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon" id="greeting-icon">☀️</div>
+        <h1 class="greeting" id="greeting">Loading...</h1>
+        <p class="time" id="time">--:--</p>
+        
+        <div class="day-info">
+            <div class="day-name" id="day-name">Loading...</div>
+            <div class="date-full" id="date-full">Loading...</div>
+        </div>
+        
+        <div class="avatar">M</div>
+        <h2 class="name">Mohamed Ahmed</h2>
+        <p class="title">Full-Stack Web Developer</p>
+        
+        <div class="skills">
+            <span class="skill">JavaScript</span>
+            <span class="skill">React</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">HTML/CSS</span>
+        </div>
+        
+        <div class="status">
+            <span>Available for work</span>
+        </div>
+    </div>
+
+    <script>
+        // =============================================
+        // Session 06 - Portfolio Time Greeting
+        // Topic: new Date(), getHours(), if/else, switch
+        // =============================================
+
+        // ===== Get Current Date and Time =====
+        let now = new Date();
+        let hour = now.getHours();
+        let minutes = now.getMinutes();
+        let day = now.getDay();        // 0-6 (Sunday-Saturday)
+        let date = now.getDate();
+        let month = now.getMonth();    // 0-11
+        let year = now.getFullYear();
+
+        // ===== Time Greeting with if/else =====
+        let greeting;
+        let greetingIcon;
+
+        if (hour < 12) {
+            greeting = "Good Morning!";
+            greetingIcon = "☀️";
+        } else if (hour < 17) {
+            greeting = "Good Afternoon!";
+            greetingIcon = "🌤️";
+        } else if (hour < 21) {
+            greeting = "Good Evening!";
+            greetingIcon = "🌅";
+        } else {
+            greeting = "Good Night!";
+            greetingIcon = "🌙";
+        }
+
+        // Update the greeting
+        document.getElementById("greeting").textContent = greeting;
+        document.getElementById("greeting-icon").textContent = greetingIcon;
+
+        // ===== Format Time =====
+        let formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+        let timeString = hour + ":" + formattedMinutes;
+        document.getElementById("time").textContent = "Current time: " + timeString;
+
+        // ===== Day Name with switch =====
+        let dayName;
+        switch (day) {
+            case 0:
+                dayName = "Sunday";
+                break;
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                break;
+            default:
+                dayName = "Unknown";
+        }
+
+        document.getElementById("day-name").textContent = dayName;
+
+        // ===== Month Name with switch =====
+        let monthName;
+        switch (month) {
+            case 0: monthName = "January"; break;
+            case 1: monthName = "February"; break;
+            case 2: monthName = "March"; break;
+            case 3: monthName = "April"; break;
+            case 4: monthName = "May"; break;
+            case 5: monthName = "June"; break;
+            case 6: monthName = "July"; break;
+            case 7: monthName = "August"; break;
+            case 8: monthName = "September"; break;
+            case 9: monthName = "October"; break;
+            case 10: monthName = "November"; break;
+            case 11: monthName = "December"; break;
+            default: monthName = "Unknown";
+        }
+
+        let fullDate = monthName + " " + date + ", " + year;
+        document.getElementById("date-full").textContent = fullDate;
+
+        // ===== Console Output =====
+        console.log("========== Date & Time Info ==========");
+        console.log("Hour:", hour);
+        console.log("Minutes:", minutes);
+        console.log("Day (0-6):", day, "->", dayName);
+        console.log("Month (0-11):", month, "->", monthName);
+        console.log("Date:", date);
+        console.log("Year:", year);
+        console.log("Greeting:", greeting);
+        console.log("Full Date:", fullDate);
+
+        // ===== Additional Practice: Time-based Messages =====
+        let activity;
+
+        if (hour >= 5 && hour < 9) {
+            activity = "Perfect time for coding practice!";
+        } else if (hour >= 9 && hour < 12) {
+            activity = "Great time to work on projects!";
+        } else if (hour >= 12 && hour < 14) {
+            activity = "Lunch break time! 🍽️";
+        } else if (hour >= 14 && hour < 18) {
+            activity = "Afternoon coding session!";
+        } else if (hour >= 18 && hour < 21) {
+            activity = "Evening review time!";
+        } else {
+            activity = "Time to rest and recharge!";
+        }
+
+        console.log("Activity suggestion:", activity);
+
+        // ===== Working Hours Check =====
+        let isWorkingHours = hour >= 9 && hour < 17;
+        console.log("Is working hours (9-17)?", isWorkingHours);
+
+        // ===== Weekend Check =====
+        let isWeekend = day === 0 || day === 6;
+        console.log("Is weekend?", isWeekend, dayName);
+
+        // ===== Days until Friday =====
+        let daysUntilFriday = (5 - day + 7) % 7;
+        if (daysUntilFriday === 0) {
+            console.log("It's Friday! 🎉");
+        } else {
+            console.log("Days until Friday:", daysUntilFriday);
+        }
+    </script>
+</body>
+</html>
