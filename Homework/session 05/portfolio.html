@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Session 05</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        
+        .title {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        .location {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        
+        .skill {
+            background: #f0f0ff;
+            color: #667eea;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .info {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 14px;
+        }
+        
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #d4edda;
+            color: #155724;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #28a745;
+            border-radius: 50%;
+        }
+        
+        .output {
+            margin-top: 24px;
+            padding: 16px;
+            background: #1a1a2e;
+            border-radius: 12px;
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            text-align: left;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .output-title {
+            color: #888;
+            margin-bottom: 8px;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="avatar" id="avatar">M</div>
+        <h1 class="name" id="name">Loading...</h1>
+        <p class="title" id="title">Loading...</p>
+        <p class="location" id="location">Loading...</p>
+        
+        <div class="skills" id="skills">
+            <!-- Skills will be added by JavaScript -->
+        </div>
+        
+        <div class="info">
+            <div class="info-item">
+                <span class="info-label">Age</span>
+                <span class="info-value" id="age">-</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Experience</span>
+                <span class="info-value" id="experience">-</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Email</span>
+                <span class="info-value" id="email">-</span>
+            </div>
+        </div>
+        
+        <div class="status" id="status">
+            <span class="status-dot"></span>
+            <span>Available for work</span>
+        </div>
+        
+        <div class="output">
+            <div class="output-title">// Console Output (F12 to view)</div>
+            <div id="console-output"></div>
+        </div>
+    </div>
+
+    <script>
+        // =============================================
+        // Session 05 - Portfolio Script
+        // Topic: Variables, Data Types, console.log()
+        // =============================================
+
+        // ===== Personal Information =====
+        const fullName = "Mohamed Ahmed";        // String
+        let jobTitle = "Full-Stack Developer";  // String
+        let age = 22;                            // Number
+        let city = "Cairo";                     // String
+        let country = "Egypt";                  // String
+        let isAvailable = true;                 // Boolean
+        let yearsOfExperience = 2;              // Number
+        let email = "mohamed@example.com";      // String
+
+        // ===== Skills Array =====
+        // Note: We'll learn arrays in Session 08
+        let skills = ["JavaScript", "React", "Node.js", "HTML", "CSS"];
+
+        // ===== Log to Console =====
+        console.log("========== Profile Data ==========");
+        console.log("Name:", fullName);
+        console.log("Title:", jobTitle);
+        console.log("Age:", age);
+        console.log("Location:", city + ", " + country);
+        console.log("Available:", isAvailable);
+        console.log("Experience:", yearsOfExperience + " years");
+        console.log("Email:", email);
+        
+        console.log("\n========== Data Types ==========");
+        console.log("typeof fullName:", typeof fullName);           // string
+        console.log("typeof jobTitle:", typeof jobTitle);           // string
+        console.log("typeof age:", typeof age);                     // number
+        console.log("typeof isAvailable:", typeof isAvailable);     // boolean
+        console.log("typeof yearsOfExperience:", typeof yearsOfExperience); // number
+
+        // ===== Update the HTML =====
+        document.getElementById("avatar").textContent = fullName.charAt(0);
+        document.getElementById("name").textContent = fullName;
+        document.getElementById("title").textContent = jobTitle;
+        document.getElementById("location").textContent = city + ", " + country;
+        document.getElementById("age").textContent = age + " years old";
+        document.getElementById("experience").textContent = yearsOfExperience + "+ years";
+        document.getElementById("email").textContent = email;
+
+        // ===== Add Skills to HTML =====
+        let skillsContainer = document.getElementById("skills");
+        for (let i = 0; i < skills.length; i++) {
+            let skillElement = document.createElement("span");
+            skillElement.className = "skill";
+            skillElement.textContent = skills[i];
+            skillsContainer.appendChild(skillElement);
+        }
+
+        // ===== Update Status =====
+        if (isAvailable) {
+            document.getElementById("status").innerHTML = '<span class="status-dot"></span><span>Available for work</span>';
+        } else {
+            document.getElementById("status").innerHTML = '<span>Currently not available</span>';
+            document.getElementById("status").style.background = "#fff3cd";
+            document.getElementById("status").style.color = "#856404";
+        }
+
+        // ===== Display Console Output in Page =====
+        let consoleOutput = document.getElementById("console-output");
+        consoleOutput.innerHTML = 
+            "Name: " + fullName + "<br>" +
+            "Title: " + jobTitle + "<br>" +
+            "Age: " + age + " (" + typeof age + ")<br>" +
+            "Available: " + isAvailable + " (" + typeof isAvailable + ")<br>" +
+            "Skills: " + skills.join(", ");
+
+        // ===== Additional Practice =====
+        // Try changing these values and see what happens!
+        console.log("\n========== Practice ==========");
+        
+        // Using const for values that shouldn't change
+        const PORTFOLIO_VERSION = "1.0.0";
+        const CREATION_YEAR = 2024;
+        
+        console.log("Portfolio Version:", PORTFOLIO_VERSION);
+        console.log("Created:", CREATION_YEAR);
+        console.log("typeof PORTFOLIO_VERSION:", typeof PORTFOLIO_VERSION);
+        console.log("typeof CREATION_YEAR:", typeof CREATION_YEAR);
+
+        // Special data types
+        let futureProject;                    // undefined
+        let completedProject = null;          // null
+        
+        console.log("\nfutureProject:", futureProject);
+        console.log("typeof futureProject:", typeof futureProject);
+        console.log("completedProject:", completedProject);
+        console.log("typeof completedProject:", typeof completedProject); // "object" - JS quirk!
+    </script>
+</body>
+</html>
