@@ -1,15 +1,3 @@
-/**
- * Session 07 - Question 2
- * Topic: Arrow Functions & Default Parameters
- * 
- * Exercise: Modern JavaScript Functions
- * - Arrow function syntax
- * - Default parameters
- * - Short vs long form
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║        ARROW FUNCTIONS               ║");
 console.log("╚══════════════════════════════════════╝\n");
