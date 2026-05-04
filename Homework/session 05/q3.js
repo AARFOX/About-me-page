@@ -1,20 +1,9 @@
-/**
- * Session 05 - Question 3
- * Topic: Complete Profile System
- * 
- * Exercise: Build a Developer Profile System
- * - Use all learned concepts: variables, data types, typeof
- * - Create a complete profile with different data types
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║     DEVELOPER PROFILE SYSTEM         ║");
 console.log("╚══════════════════════════════════════╝\n");
 
 // ============ Personal Information ============
-const fullName = "Mohamed Ahmed";
+const fullName = "Mohamed Ashraf";
 const jobTitle = "Full-Stack Developer";
 let age = 22;
 let city = "Cairo";
@@ -101,7 +90,7 @@ console.log("Currently " + (isAvailable ? "available" : "not available") + " for
 // ╚══════════════════════════════════════╝
 //
 // >>> Personal Information:
-//     Name: Mohamed Ahmed
+//     Name: Mohamed Ashraf
 //     Title: Full-Stack Developer
 //     Age: 22
 //     Location: Cairo, Egypt
@@ -124,7 +113,7 @@ console.log("Currently " + (isAvailable ? "available" : "not available") + " for
 //
 // Variable           | Value              | Type
 // -------------------|--------------------|---------
-// fullName           | Mohamed Ahmed        | string
+// fullName           | Mohamed Ashraf        | string
 // jobTitle           | Full-Stack Developer | string
 // age                | 22                 | number
 // city               | Cairo            | string
@@ -150,7 +139,7 @@ console.log("Currently " + (isAvailable ? "available" : "not available") + " for
 // ║          PROFILE SUMMARY             ║
 // ╚══════════════════════════════════════╝
 //
-// Mohamed Ahmed is a Full-Stack Developer
+// Mohamed Ashraf is a Full-Stack Developer
 // from Cairo, Egypt.
 // With 2+ years of experience in JavaScript.
 // Currently available for new projects.
