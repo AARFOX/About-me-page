@@ -1,16 +1,3 @@
-/**
- * Session 08 - Question 2
- * Topic: Array Methods - forEach, map, filter, find
- * 
- * Exercise: Data Transformation
- * - Iterate with forEach
- * - Transform with map
- * - Filter items
- * - Find single items
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║        ARRAY METHODS                 ║");
 console.log("╚══════════════════════════════════════╝\n");
