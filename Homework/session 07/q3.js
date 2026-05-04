@@ -1,15 +1,3 @@
-/**
- * Session 07 - Question 3
- * Topic: Callbacks & Scope
- * 
- * Exercise: Understanding Callbacks and Variable Scope
- * - Local vs Global scope
- * - Functions as arguments (callbacks)
- * - Higher-order functions
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║              SCOPE                   ║");
 console.log("╚══════════════════════════════════════╝\n");
