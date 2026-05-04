@@ -1,12 +1,3 @@
-/**
- * Session 04 - Question 3
- * Topic: Nested Objects, Reference vs Value, & Portfolio Data
- * 
- * Task: Build a complete portfolio data structure with nested objects
- */
-
-// ===== Solution =====
-
 // 1. Complete Portfolio Data Structure
 const portfolioData = {
     // Owner information (nested object)
