@@ -1,15 +1,3 @@
-/**
- * Session 08 - Question 3
- * Topic: Objects & Array of Objects
- * 
- * Exercise: Portfolio Data Structure
- * - Create and access objects
- * - Methods with 'this'
- * - Array of objects pattern
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║           OBJECTS                    ║");
 console.log("╚══════════════════════════════════════╝\n");
@@ -342,12 +330,3 @@ console.log("Clone:", clone);
 // Add properties while copying
 let extended = { ...developer, country: "Egypt", age: 26 };
 console.log("Extended:", extended);
-
-// ============ Expected Output ============
-// ╔══════════════════════════════════════╗
-// ║           OBJECTS                    ║
-// ╚══════════════════════════════════════╝
-//
-// >>> Creating Objects:
-// Developer object: { name: 'Ahmed', age: 25, city: 'Cairo', isAvailable: true }
-// ...
