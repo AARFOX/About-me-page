@@ -1,18 +1,3 @@
-/**
- * Session 09 - Question 3
- * Topic: Burger Menu Implementation
- * 
- * Exercise: Build a Responsive Burger Menu
- * - Toggle navigation on mobile
- * - Handle click events
- * - Close menu when link clicked
- */
-
-// ============ Solution ============
-
-// NOTE: This code runs in the BROWSER
-// Complete HTML file provided at the end
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║          BURGER MENU                 ║");
 console.log("╚══════════════════════════════════════╝\n");
