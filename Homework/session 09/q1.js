@@ -1,18 +1,3 @@
-/**
- * Session 09 - Question 1
- * Topic: DOM Selection & classList.toggle
- * 
- * Exercise: Selecting Elements and Toggling Classes
- * - querySelector and querySelectorAll
- * - Changing content with textContent and innerHTML
- * - Toggling CSS classes
- */
-
-// ============ Solution ============
-
-// NOTE: This code runs in the BROWSER, not Node.js
-// Open the HTML file in a browser and check the console
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║       DOM SELECTION & TOGGLE         ║");
 console.log("╚══════════════════════════════════════╝\n");
