@@ -1,15 +1,3 @@
-/**
- * Session 07 - Question 1
- * Topic: Function Declaration, Expression & Return Values
- * 
- * Exercise: Profile Formatter & Project Cost Calculator
- * - Practice function declarations
- * - Practice function expressions
- * - Understand return values
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║      FUNCTION DECLARATIONS           ║");
 console.log("╚══════════════════════════════════════╝\n");
