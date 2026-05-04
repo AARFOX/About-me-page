@@ -1,16 +1,3 @@
-/**
- * Session 06 - Question 3
- * Topic: Loops (for & while)
- * 
- * Exercise: FizzBuzz
- * - Print numbers 1 to 100
- * - For multiples of 3, print "Fizz" instead
- * - For multiples of 5, print "Buzz" instead
- * - For multiples of both 3 and 5, print "FizzBuzz"
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║           FIZZBUZZ GAME              ║");
 console.log("╚══════════════════════════════════════╝\n");
