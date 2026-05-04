@@ -1,15 +1,3 @@
-/**
- * Calculator - Session 02 Assignment
- * Course: Web Development & Freelancing
- * Instructor: Ahmed M. Ezzeldeen
- * 
- * Features:
- * - Basic operations: +, -, *, /, %
- * - Error handling: division by zero, invalid operations
- * - History of calculations
- * - Clean and modern UI
- */
-
 // ===== State Variables =====
 let currentOperand = '';
 let previousOperand = '';
