@@ -1,11 +1,3 @@
-/**
- * Session 08 - Portfolio Data Layer
- * Topic: Arrays + Objects
- * 
- * This file stores all portfolio data as JavaScript objects
- * Will be used in Session 09 to render dynamically
- */
-
 // =============================================
 // PORTFOLIO DATA
 // =============================================
