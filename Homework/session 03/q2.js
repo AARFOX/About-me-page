@@ -1,20 +1,3 @@
-/**
- * Session 03 - Question 2
- * Topic: Multiple Parameters & Arithmetic Operations
- * 
- * Task: Build a function called applyDiscount that:
- * - Takes a price and a discount percentage
- * - Returns the final price after discount
- */
-
-// ===== Solution =====
-
-/**
- * Apply discount to a price
- * @param {number} price - Original price
- * @param {number} discount - Discount percentage (0-100)
- * @returns {number} - Price after discount
- */
 function applyDiscount(price, discount) {
     // Validate inputs
     if (price < 0) {
