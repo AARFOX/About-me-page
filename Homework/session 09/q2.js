@@ -1,33 +1,3 @@
-/**
- * Session 09 - Question 2
- * Topic: Event Listeners - Click Counter
- * 
- * Exercise: Build a Click Counter
- * - Listen for click events
- * - Update text content
- * - Reset functionality
- */
-
-// ============ Solution ============
-
-// NOTE: This code runs in the BROWSER
-// Create an HTML file with the elements below to test
-
-/*
-<!-- HTML Structure -->
-<div class="counter-container">
-    <h2>Click Counter</h2>
-    <div class="counter-display">
-        <span id="count">0</span>
-    </div>
-    <div class="counter-buttons">
-        <button id="decrementBtn">-</button>
-        <button id="incrementBtn">+</button>
-        <button id="resetBtn">Reset</button>
-    </div>
-</div>
-*/
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║          CLICK COUNTER               ║");
 console.log("╚══════════════════════════════════════╝\n");
