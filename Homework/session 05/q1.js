@@ -1,14 +1,3 @@
-/**
- * Session 05 - Question 1
- * Topic: Variables & Data Types
- * 
- * Exercise: Create a Profile Card with Variables
- * - Declare variables for: name, age, city, isStudent
- * - Log each variable and its type
- */
-
-// ============ Solution ============
-
 // Declare variables using let (can change) and const (cannot change)
 const name = "Mohamed Ahmed";      // String - your name
 let age = 22;                      // Number - your age  
