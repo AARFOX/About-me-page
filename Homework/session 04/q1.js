@@ -1,13 +1,3 @@
-/**
- * Session 04 - Question 1
- * Topic: Object Basics, Properties & Accessing Values
- * 
- * Task: Create a user object with personal information
- * and demonstrate different ways to access properties
- */
-
-// ===== Solution =====
-
 // Create a user object
 const user = {
     name: "Ahmed",
