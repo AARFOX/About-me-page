@@ -1,15 +1,4 @@
 /**
- * Session 03 - Question 3
- * Topic: String Manipulation & Template Literals
- * 
- * Task: Build a function called buildProfile that:
- * - Takes name, title, and skills
- * - Returns a formatted profile string
- */
-
-// ===== Solution =====
-
-/**
  * Build a formatted profile string
  * @param {string} name - User's name
  * @param {string} title - User's job title
