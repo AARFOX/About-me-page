@@ -1,14 +1,3 @@
-/**
- * Session 05 - Question 2
- * Topic: let vs const & Data Types
- * 
- * Exercise: Understanding Variable Behavior
- * - Practice the difference between let and const
- * - Explore all 5 basic data types
- */
-
-// ============ Solution ============
-
 console.log("========== Part 1: let vs const ==========");
 
 // Using const for values that should never change
