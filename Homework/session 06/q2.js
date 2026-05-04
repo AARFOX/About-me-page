@@ -1,16 +1,3 @@
-/**
- * Session 06 - Question 2
- * Topic: Control Flow - if/else
- * 
- * Exercise: Grade Calculator
- * - Get score from user using prompt()
- * - Convert to number using Number()
- * - Use if/else if/else to determine grade
- * - Show result using alert()
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║        GRADE CALCULATOR              ║");
 console.log("╚══════════════════════════════════════╝\n");
