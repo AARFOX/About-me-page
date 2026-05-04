@@ -1,15 +1,3 @@
-/**
- * Session 08 - Question 1
- * Topic: Arrays - Creating, Accessing, Adding, Removing
- * 
- * Exercise: Skills Manager
- * - Create and manipulate arrays
- * - Add and remove items
- * - Access by index
- */
-
-// ============ Solution ============
-
 console.log("╔══════════════════════════════════════╗");
 console.log("║         ARRAYS BASICS                ║");
 console.log("╚══════════════════════════════════════╝\n");
