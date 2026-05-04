@@ -1,12 +1,3 @@
-/**
- * Session 04 - Question 2
- * Topic: Object Methods & The `this` Keyword
- * 
- * Task: Create objects with methods and understand `this`
- */
-
-// ===== Solution =====
-
 // 1. Basic Object with Methods
 const calculator = {
     brand: "Casio",
