@@ -1,12 +1,3 @@
-/**
- * Session 06 - Question 1
- * Topic: Operators & Type Conversion
- * 
- * Exercise: Temperature Converter
- * - Convert Celsius to Fahrenheit and vice versa
- * - Use arithmetic operators and type conversion
- */
-
 // ============ Solution ============
 
 console.log("╔══════════════════════════════════════╗");
