@@ -14,7 +14,7 @@ const portfolioData = {
     
     // ===== Personal Information =====
     personal: {
-        name: "Mohamed Ahmed",
+        name: "Mohamed Ashraf",
         title: "Full-Stack Web Developer",
         tagline: "Building modern web experiences",
         email: "mohamed@example.com",
@@ -30,15 +30,15 @@ const portfolioData = {
     social: [
         { 
             platform: "GitHub", 
-            url: "https://github.com/mohamed-ahmed",
+            url: "https://github.com/mohamed-Ashraf",
             icon: "github",
-            username: "@mohamed-ahmed"
+            username: "@mohamed-Ashraf"
         },
         { 
             platform: "LinkedIn", 
-            url: "https://linkedin.com/in/mohamed-ahmed",
+            url: "https://linkedin.com/in/mohamed-Ashraf",
             icon: "linkedin",
-            username: "Mohamed Ahmed"
+            username: "Mohamed Ashraf"
         },
         { 
             platform: "Twitter", 
@@ -150,7 +150,7 @@ const portfolioData = {
             status: "completed",
             featured: false,
             image: "portfolio.png",
-            liveUrl: "https://mohamed-ahmed.netlify.app",
+            liveUrl: "https://mohamed-Ashraf.netlify.app",
             githubUrl: "https://github.com/mohamed/portfolio",
             highlights: [
                 "Smooth animations",
