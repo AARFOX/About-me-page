@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Random Quote Generator</h1>
+            <p class="subtitle">Click the button to get inspired!</p>
+        </header>
+
+        <main class="quote-card">
+            <div class="quote-icon">"</div>
+            <p id="quote-text" class="quote-text">Click the button to get a quote</p>
+            <p id="quote-author" class="quote-author"></p>
+        </main>
+
+        <div class="actions">
+            <button id="new-quote" class="btn btn-primary">
+                <span class="btn-icon">✨</span>
+                Get New Quote
+            </button>
+            <button id="copy-quote" class="btn btn-secondary">
+                <span class="btn-icon">📋</span>
+                Copy Quote
+            </button>
+        </div>
+
+        <div id="notification" class="notification"></div>
+
+        <footer>
+            <p>Powered by <a href="https://dummyjson.com" target="_blank">DummyJSON API</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

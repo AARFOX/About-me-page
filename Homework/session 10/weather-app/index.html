@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather App</h1>
+            <p class="subtitle">Check the weather in any city</p>
+        </header>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="city-input"
+                placeholder="Enter city name..."
+                autocomplete="off"
+            >
+            <button id="search-btn" class="btn-search">
+                <span class="search-icon">🔍</span>
+                Search
+            </button>
+        </div>
+
+        <main id="weather-result" class="weather-card hidden">
+            <!-- Weather content will be inserted here -->
+        </main>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+        <div id="error-message" class="error-message hidden">
+            <span class="error-icon">⚠️</span>
+            <p id="error-text">City not found. Please try again.</p>
+        </div>
+
+        <div class="recent-searches" id="recent-searches">
+            <h3>Recent Searches</h3>
+            <div id="recent-list" class="recent-list"></div>
+        </div>
+
+        <footer>
+            <p>Powered by <a href="https://wttr.in" target="_blank">wttr.in API</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
