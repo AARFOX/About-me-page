@@ -1,283 +1,566 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Ashraf | Full-Stack Developer</title>
+    <title>Mohammed Ashraf | Junior Web Developer</title>
+    <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- =============================================
-         Navigation - Session 09: DOM & Events
-         ============================================= -->
-    <nav class="navbar">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav">
         <div class="nav-container">
-            <a href="#home" class="logo">Mohamed.dev</a>
-            
-            <!-- Burger Menu Button -->
-            <button class="burger-btn" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#goals" class="nav-link">Goals</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+            <a href="#about" class="nav-logo">
+                <img src="icon.png" alt="M" class="nav-icon">
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#github-activity">GitHub</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <!-- Search Button -->
+                <button class="search-toggle" aria-label="Search" id="search-toggle">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="nav-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- =============================================
-         Hero Section - Session 06: Date & Time Greeting
-         ============================================= -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="greeting-icon" id="greeting-icon">☀️</div>
-            <p class="greeting" id="greeting">Loading...</p>
-            <div class="day-info">
-                <span class="day-name" id="day-name">Loading...</span>
-                <span class="date-full" id="date-full">Loading...</span>
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-content">
+            <input type="text" class="search-input" id="search-input" placeholder="Search skills, projects, experience...">
+            <div class="search-results" id="search-results"></div>
+            <button class="search-close" id="search-close">ESC to close</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#github-activity">GitHub</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <header id="about" class="hero">
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-top">
+                    <div class="hero-photo">
+                        <img src="profile.jpg" alt="Mohammed Ashraf" loading="lazy" class="profile-img">
+                        <div class="photo-glow"></div>
+                    </div>
+                    <div class="hero-text">
+                        <p class="hero-greeting">Hello, I'm</p>
+                        <h1 class="hero-name gradient-text">Mohammed Ashraf</h1>
+                        <p class="hero-title">
+                            <span class="typing-text" id="typing-text"></span>
+                            <span class="typing-cursor">|</span>
+                        </p>
+                    </div>
+                </div>
+                <p class="hero-desc">Entry-level Web Developer with a solid foundation in front-end and back-end web development. Proficient in HTML5, CSS3, and JavaScript (ES6+) for creating responsive and interactive user interfaces.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary glow-btn">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                    <a href="cv.pdf" class="btn btn-secondary" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download CV
+                    </a>
+                </div>
+                <div class="hero-info">
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <span>Cairo, Egypt</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">💼</span>
+                        <span>Available for Work</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎓</span>
+                        <span>Thebes Academy</span>
+                    </div>
+                </div>
             </div>
-            <h1 class="hero-name">Mohamed Ashraf</h1>
-            <p class="hero-title">Full-Stack Web Developer</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- Stats Counter -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid" data-aos="fade-up">
+                <div class="stat-card tilt-card">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-card tilt-card">
+                    <span class="stat-number" data-target="7">0</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+                <div class="stat-card tilt-card">
+                    <span class="stat-number" data-target="300">0</span>
+                    <span class="stat-label">Coding Challenges</span>
+                </div>
+                <div class="stat-card tilt-card">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Languages</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- =============================================
-         About Section - Session 05: Variables & Data Types
-         ============================================= -->
-    <section id="about" class="about">
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-card">
-                    <div class="avatar" id="avatar">M</div>
-                    <div class="about-info">
-                        <h3 id="full-name">Loading...</h3>
-                        <p class="job-title" id="job-title">Loading...</p>
-                        <p class="location" id="location">Loading...</p>
+            <h2 class="section-title gradient-text" data-aos="fade-up">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category tilt-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="skill-cat-title">🎨 Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">Flexbox</span>
+                        <span class="skill-tag">Grid</span>
+                        <span class="skill-tag">Animations</span>
                     </div>
                 </div>
-                <div class="about-details">
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="info-label">Age</span>
-                            <span class="info-value" id="age">-</span>
+                <div class="skill-category tilt-card" data-aos="fade-up" data-aos-delay="150">
+                    <h3 class="skill-cat-title">⚙️ Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                    </div>
+                </div>
+                <div class="skill-category tilt-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="skill-cat-title">🗄️ Databases</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Firebase</span>
+                        <span class="skill-tag">SQLite</span>
+                    </div>
+                </div>
+                <div class="skill-category tilt-card" data-aos="fade-up" data-aos-delay="250">
+                    <h3 class="skill-cat-title">🛠️ Tools & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">npm/yarn</span>
+                        <span class="skill-tag">Webpack</span>
+                        <span class="skill-tag">Vite</span>
+                    </div>
+                </div>
+                <div class="skill-category tilt-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="skill-cat-title">🎨 Design Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Adobe Photoshop</span>
+                        <span class="skill-tag">Adobe XD</span>
+                        <span class="skill-tag">UI/UX Principles</span>
+                    </div>
+                </div>
+                <div class="skill-category tilt-card" data-aos="fade-up" data-aos-delay="350">
+                    <h3 class="skill-cat-title">🌐 Languages</h3>
+                    <div class="language-list">
+                        <div class="language-item">
+                            <span>Arabic</span>
+                            <span class="lang-level">Native</span>
                         </div>
-                        <div class="info-item">
-                            <span class="info-label">Experience</span>
-                            <span class="info-value" id="experience">-</span>
+                        <div class="language-item">
+                            <span>English</span>
+                            <span class="lang-level">B2</span>
                         </div>
-                        <div class="info-item">
-                            <span class="info-label">Email</span>
-                            <span class="info-value" id="email">-</span>
+                        <div class="language-item">
+                            <span>Greek</span>
+                            <span class="lang-level">A1</span>
                         </div>
-                        <div class="info-item">
-                            <span class="info-label">Status</span>
-                            <span class="info-value status-available" id="status">-</span>
+                        <div class="language-item">
+                            <span>Swedish</span>
+                            <span class="lang-level">A1</span>
                         </div>
                     </div>
-                    <p class="about-text" id="about-text">
-                        I'm a passionate Full-Stack Developer specializing in building modern web applications. 
-                        I love turning ideas into real, working products with clean, maintainable code.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =============================================
-         Skills Section - Session 08: Arrays & Objects
-         ============================================= -->
-    <section id="skills" class="skills">
+    <!-- Experience -->
+    <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-container" id="skills-container">
-                <!-- Skills will be rendered by JavaScript -->
+            <h2 class="section-title gradient-text" data-aos="fade-up">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content tilt-card">
+                        <div class="timeline-header">
+                            <h3>Web Development Trainee</h3>
+                            <span class="timeline-company">Self-Learning & Personal Projects</span>
+                            <span class="timeline-date">2024 — Present</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Built multiple responsive web pages using HTML5, CSS3, and vanilla JavaScript.</li>
+                            <li>Developed web applications using Python with Flask framework.</li>
+                            <li>Practiced version control workflows with Git and GitHub.</li>
+                            <li>Created UI/UX designs using Figma and Adobe tools.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content tilt-card">
+                        <div class="timeline-header">
+                            <h3>Data Analysis Projects</h3>
+                            <span class="timeline-company">Freelance</span>
+                            <span class="timeline-date">2024</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Analyzed and visualized data using Python libraries.</li>
+                            <li>Developed data collection tools and dashboards.</li>
+                            <li>Collaborated with clients to deliver solutions within deadlines.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- =============================================
-         Projects Section - Session 08: Array Methods
-         ============================================= -->
-    <section id="projects" class="projects">
+    <!-- Projects -->
+    <section id="projects" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-            </div>
-            <div class="projects-grid" id="projects-grid">
-                <!-- Projects will be rendered by JavaScript -->
+            <h2 class="section-title gradient-text" data-aos="fade-up">Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card tilt-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=500&h=300&fit=crop" alt="Landing Page Project" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Responsive Landing Page</h3>
+                        <p class="project-desc">A fully responsive landing page from a Figma mockup with smooth animations and interactive elements.</p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Figma</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/mohammedashraf/landing-page" target="_blank" class="btn-project github">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Code
+                            </a>
+                            <a href="#" target="_blank" class="btn-project demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card tilt-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=500&h=300&fit=crop" alt="Task Manager Project" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Task Manager App</h3>
+                        <p class="project-desc">Task management application with user authentication and CRUD operations using Flask.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>SQLite</span>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/mohammedashraf/task-manager" target="_blank" class="btn-project github">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Code
+                            </a>
+                            <a href="#" target="_blank" class="btn-project demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card tilt-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=500&h=300&fit=crop" alt="Portfolio Project" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Personal Portfolio</h3>
+                        <p class="project-desc">Portfolio website showcasing projects and skills with smooth scrolling navigation.</p>
+                        <div class="project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Adobe XD</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/mohammedashraf/portfolio" target="_blank" class="btn-project github">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Code
+                            </a>
+                            <a href="#" target="_blank" class="btn-project demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-card tilt-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=500&h=300&fit=crop" alt="Django Blog Project" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Django Blog</h3>
+                        <p class="project-desc">Blog application with user registration, login, and post management features.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>PostgreSQL</span>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/mohammedashraf/django-blog" target="_blank" class="btn-project github">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                Code
+                            </a>
+                            <a href="#" target="_blank" class="btn-project demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- =============================================
-         Goals Section - Session 03: Portfolio Plan
-         ============================================= -->
-    <section id="goals" class="goals">
+    <!-- GitHub Activity -->
+    <section id="github-activity" class="section">
         <div class="container">
-            <h2 class="section-title">My Goals</h2>
-            <div class="goals-grid">
-                <div class="goal-card">
-                    <div class="goal-icon">🎯</div>
-                    <h3>Short-term (1-2 months)</h3>
-                    <ul class="goal-list">
-                        <li><span class="check">✅</span> Complete all course sessions</li>
-                        <li><span class="check">✅</span> Build portfolio projects</li>
-                        <li><span class="pending">⏳</span> Create Upwork/Mostaql profiles</li>
-                        <li><span class="pending">⏳</span> Get first freelance client</li>
-                    </ul>
+            <h2 class="section-title gradient-text" data-aos="fade-up">GitHub Activity</h2>
+            <div class="github-grid" data-aos="fade-up">
+                <div class="github-stats tilt-card">
+                    <div class="github-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span>GitHub Stats</span>
+                    </div>
+                    <div class="github-stats-grid">
+                        <div class="github-stat">
+                            <span class="github-stat-number">4</span>
+                            <span class="github-stat-label">Repositories</span>
+                        </div>
+                        <div class="github-stat">
+                            <span class="github-stat-number">100+</span>
+                            <span class="github-stat-label">Contributions</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="goal-card">
-                    <div class="goal-icon">🚀</div>
-                    <h3>Mid-term (3-6 months)</h3>
-                    <ul class="goal-list">
-                        <li><span class="pending">⏳</span> Complete 5+ freelance projects</li>
-                        <li><span class="pending">⏳</span> Learn React or Vue.js</li>
-                        <li><span class="pending">⏳</span> Build professional network</li>
-                        <li><span class="pending">⏳</span> Earn 5-star reviews</li>
-                    </ul>
-                </div>
-                <div class="goal-card">
-                    <div class="goal-icon">🏆</div>
-                    <h3>Long-term (6-12 months)</h3>
-                    <ul class="goal-list">
-                        <li><span class="pending">⏳</span> Become Top Rated freelancer</li>
-                        <li><span class="pending">⏳</span> Expand to full-stack</li>
-                        <li><span class="pending">⏳</span> Build recurring clients</li>
-                        <li><span class="pending">⏳</span> Financial independence</li>
-                    </ul>
+                <div class="github-repos tilt-card">
+                    <h4>Recent Repositories</h4>
+                    <div class="repo-list" id="repo-list">
+                        <a href="https://github.com/mohammedashraf/landing-page" target="_blank" class="repo-item">
+                            <span class="repo-name">landing-page</span>
+                            <span class="repo-desc">Responsive landing page with animations</span>
+                        </a>
+                        <a href="https://github.com/mohammedashraf/task-manager" target="_blank" class="repo-item">
+                            <span class="repo-name">task-manager</span>
+                            <span class="repo-desc">Flask task management app</span>
+                        </a>
+                        <a href="https://github.com/mohammedashraf/portfolio" target="_blank" class="repo-item">
+                            <span class="repo-name">portfolio</span>
+                            <span class="repo-desc">Personal portfolio website</span>
+                        </a>
+                        <a href="https://github.com/mohammedashraf/django-blog" target="_blank" class="repo-item">
+                            <span class="repo-name">django-blog</span>
+                            <span class="repo-desc">Django blog application</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =============================================
-         Contact Section - Session 09: Forms & Events
-         ============================================= -->
-    <section id="contact" class="contact">
+    <!-- Education -->
+    <section id="education" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's work together!</h3>
-                    <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
-                    <div class="contact-links">
-                        <a href="#" class="contact-link">
-                            <span class="contact-icon">📧</span>
-                            <span id="contact-email">mohamed@example.com</span>
-                        </a>
-                        <a href="#" class="contact-link">
-                            <span class="contact-icon">💼</span>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="#" class="contact-link">
-                            <span class="contact-icon">🐙</span>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="#" class="contact-link">
-                            <span class="contact-icon">💻</span>
-                            <span>Upwork</span>
-                        </a>
-                    </div>
+            <h2 class="section-title gradient-text" data-aos="fade-up">Education</h2>
+            <div class="edu-card tilt-card" data-aos="fade-up">
+                <h3>Bachelor of Management Information Systems</h3>
+                <p class="edu-school">Thebes Academy</p>
+                <p class="edu-date">Sep 2022 — Present</p>
+                <p class="edu-detail">GPA: A+ | Database Systems, Web Development, UI/UX Design, Software Engineering</p>
+            </div>
+
+            <h3 class="cert-title" data-aos="fade-up">🏆 Certifications</h3>
+            <div class="certifications-grid" data-aos="fade-up">
+                <div class="cert-item">
+                    <span class="cert-name">HTML and CSS in Depth</span>
+                    <span class="cert-provider">Meta • Coursera</span>
                 </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email-input" name="email" placeholder="your@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Project inquiry">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Send Message</button>
-                </form>
+                <div class="cert-item">
+                    <span class="cert-name">Programming with JavaScript</span>
+                    <span class="cert-provider">Meta • Coursera</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Python for Everybody</span>
+                    <span class="cert-provider">University of Michigan</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Responsive Web Design</span>
+                    <span class="cert-provider">freeCodeCamp</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Git and GitHub</span>
+                    <span class="cert-provider">Google</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Django for Beginners</span>
+                    <span class="cert-provider">Udemy</span>
+                </div>
+                <div class="cert-item">
+                    <span class="cert-name">Figma UI/UX Design</span>
+                    <span class="cert-provider">Udemy</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- =============================================
-         Footer
-         ============================================= -->
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text" data-aos="fade-up">Contact</h2>
+            <div class="contact-content" data-aos="fade-up">
+                <p class="contact-text">I'm always open to discussing new projects, opportunities, or ideas. Feel free to reach out.</p>
+                <div class="contact-links">
+                    <a href="mailto:muhammed.alsawalhi@gmail.com" class="contact-link tilt-card">
+                        <span class="contact-icon">✉️</span>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://linkedin.com/in/mohammed-ashraf" target="_blank" class="contact-link tilt-card">
+                        <span class="contact-icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/mohammedashraf" target="_blank" class="contact-link tilt-card">
+                        <span class="contact-icon">🐙</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.kaggle.com/mohammedashraf77" target="_blank" class="contact-link tilt-card">
+                        <span class="contact-icon">📊</span>
+                        <span>Kaggle</span>
+                    </a>
+                </div>
+                <div class="contact-buttons">
+                    <a href="mailto:muhammed.alsawalhi@gmail.com" class="btn btn-primary glow-btn">
+                        Send Message
+                    </a>
+                    <a href="https://wa.me/201156448257" target="_blank" class="btn btn-whatsapp">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Share -->
+    <div class="social-share">
+        <button class="share-btn" id="share-btn" title="Share">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+    </div>
+
+    <!-- Share Modal -->
+    <div class="share-modal" id="share-modal">
+        <div class="share-modal-content">
+            <h3>Share Profile</h3>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=Check out Mohammed Ashraf's portfolio!&url=" target="_blank" class="share-option twitter">
+                    <span>Twitter</span>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=" target="_blank" class="share-option linkedin">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" class="share-option facebook">
+                    <span>Facebook</span>
+                </a>
+                <button class="share-option copy" id="copy-link">
+                    <span>Copy Link</span>
+                </button>
+            </div>
+            <button class="share-close" id="share-close">×</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-text">Mohamed.dev</span>
-                    <p>Building the web, one line at a time.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Mohamed Ashraf. All rights reserved.</p>
-            </div>
+            <p>© 2025 Mohammed Ashraf. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Calculator Modal - Session 02 -->
-    <div class="modal" id="calculator-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3>Quick Calculator</h3>
-            <div class="calculator">
-                <input type="text" class="calc-display" id="calc-display" readonly>
-                <div class="calc-buttons">
-                    <button class="calc-btn" data-value="C">C</button>
-                    <button class="calc-btn" data-value="←">←</button>
-                    <button class="calc-btn" data-value="%">%</button>
-                    <button class="calc-btn operator" data-value="/">÷</button>
-                    <button class="calc-btn" data-value="7">7</button>
-                    <button class="calc-btn" data-value="8">8</button>
-                    <button class="calc-btn" data-value="9">9</button>
-                    <button class="calc-btn operator" data-value="*">×</button>
-                    <button class="calc-btn" data-value="4">4</button>
-                    <button class="calc-btn" data-value="5">5</button>
-                    <button class="calc-btn" data-value="6">6</button>
-                    <button class="calc-btn operator" data-value="-">−</button>
-                    <button class="calc-btn" data-value="1">1</button>
-                    <button class="calc-btn" data-value="2">2</button>
-                    <button class="calc-btn" data-value="3">3</button>
-                    <button class="calc-btn operator" data-value="+">+</button>
-                    <button class="calc-btn zero" data-value="0">0</button>
-                    <button class="calc-btn" data-value=".">.</button>
-                    <button class="calc-btn equals" data-value="=">=</button>
-                </div>
+    <!-- AI Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+        <button class="chatbot-toggle" id="chatbot-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <span>🤖 Mohammed's AI Assistant</span>
+                <button class="chatbot-close" id="chatbot-close">×</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <div class="chatbot-suggestions" id="chatbot-suggestions"></div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input" placeholder="Type your message...">
+                <button id="chatbot-send">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Floating Calculator Button -->
-    <button class="calc-fab" id="calc-fab" title="Open Calculator">
-        🧮
-    </button>
-
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
